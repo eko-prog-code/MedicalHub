@@ -1,0 +1,140 @@
+/* MedTradeHub.css */
+
+.unique-new-treatment-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.unique-new-treatment-heading {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.unique-form-container {
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.unique-data-pengobatan {
+  display: flex;
+  flex-direction: column;
+}
+
+.unique-input-field {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.unique-dropzone {
+  border: 2px dashed #aaa;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.unique-uploaded-image {
+  max-width: 100%;
+  height: auto;
+  margin-top: 10px;
+}
+
+.unique-submit-button {
+  background-color: #4caf50;
+  color: white;
+  padding: 18px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.unique-submit-button:hover {
+  background-color: #45a049;
+}
+
+.card-list-container {
+  display: flex;
+  overflow-x: auto;
+  margin-top: 20px;
+}
+
+.card-item {
+  flex: 0 0 auto;
+  width: 300px;
+  margin-right: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.card-item h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.card-item p {
+  margin: 5px 0;
+}
+
+.card-item-image {
+  max-width: 100%;
+  height: auto;
+  margin-top: 10px;
+  border-radius: 4px;
+}
+
+/* Additional styles for mobile devices */
+@media (max-width: 600px) {
+  body {
+    overflow-x: hidden; /* Disable horizontal scrolling for the entire body */
+  }
+
+  html, body {
+    max-width: 100%;
+    overflow-x: hidden; /* Disable horizontal scrolling for the entire HTML document */
+  }
+
+  .unique-new-treatment-container {
+    overflow-x: auto;
+  }
+
+ .card-list-container {
+    flex-wrap: nowrap;
+  }
+
+  .card-item {
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+}
+
+
+/* Add this CSS to your existing stylesheet or create a new one for modal styling */
+
+.unique-data-pengobatan {
+  /* Your existing styles for the modal content */
+
+  position: relative;
+}
+
+.unique-data-pengobatan .close-modal-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 12px; /* Adjust the padding for the desired size */
+  font-size: 16px;
+}
+
+.unique-data-pengobatan .close-modal-button:hover {
+  background-color: darkred;
+}
