@@ -1,5 +1,6 @@
 import React from 'react';
 import MedTradeHub from './components/MedTradeHub';
+import Term from './components/Term';
 import Produk from './components/Produk';
 import Webinar from './components/Webinar';
 import NakesSkillShare from './components/NakesSkillShare';
@@ -14,6 +15,7 @@ const Home = () => {
         <p>#Ciptakan Industri Layanan Kesehatan untuk Tenaga Medis Indonesia</p>
         <p>Medical Hub: konektivitas digital untuk para tenaga medis</p>
         <RxDoseCalculator />
+        <Term />
         <MedTradeHub />
         <Produk />
         <Webinar />

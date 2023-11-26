@@ -88,7 +88,7 @@ const Produk = () => {
               <img
                 src={produk.image}
                 alt={produk.productName}
-                style={{ width: '100%', height: '150px', objectFit: 'cover', marginBottom: '8px' }}
+                style={{ width: '80%', height: '200px', objectFit: 'cover', marginBottom: '8px' }}
               />
             )}
             <p>Seller: {produk.sellerName}</p>
