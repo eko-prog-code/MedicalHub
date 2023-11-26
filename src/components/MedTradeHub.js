@@ -171,7 +171,7 @@ const MedTradeHub = () => {
 
   return (
     <div className="unique-new-treatment-container">
-      <h2 className="unique-new-treatment-heading">E-Commerce Nakes Indonesia</h2>
+      <h4 className="unique-new-treatment-heading">E-Commerce Nakes Indonesia</h4>
       <div className="unique-form-container">
         {modalIsOpen ? (
           <Modal

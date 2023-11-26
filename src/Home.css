@@ -23,7 +23,7 @@ body {
   @media (max-width: 600px) {
     .content {
       margin: 0 40px; /* Ganti margin menjadi 20px untuk perangkat mobile */
-      width: 90%;
+      width: 96%;
     }
   }
   
