@@ -10,7 +10,7 @@ const Home = () => {
   return (
     <div className="container">
       <div className="content">
-        <h1 className="main-title">Welcome to Medical Hub!</h1>
+        <h1 className="main-title">Medical Hub!</h1>
         <p>#Ciptakan Industri Layanan Kesehatan untuk Tenaga Medis Indonesia</p>
         <p>Medical Hub: konektivitas digital untuk para tenaga medis</p>
         <RxDoseCalculator />
