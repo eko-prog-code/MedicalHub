@@ -4,27 +4,13 @@ import Produk from './components/Produk';
 import Webinar from './components/Webinar';
 import NakesSkillShare from './components/NakesSkillShare';
 import RxDoseCalculator from './components/RxDoseCalculator';
+import './Home.css';
 
 const Home = () => {
-  const containerStyle = {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    margin: 0,
-  };
-
-  const divStyle = {
-    textAlign: 'center',
-  };
-
-  const h1Style = {
-    color: 'blue',
-  };
-
   return (
-    <div style={containerStyle}>
-      <div style={divStyle}>
-        <h1 style={h1Style}>Welcome to Medical Hub!</h1>
+    <div className="container">
+      <div className="content">
+        <h1 className="main-title">Welcome to Medical Hub!</h1>
         <p>#Ciptakan Industri Layanan Kesehatan untuk Tenaga Medis Indonesia</p>
         <p>Medical Hub: konektivitas digital untuk para tenaga medis</p>
         <RxDoseCalculator />

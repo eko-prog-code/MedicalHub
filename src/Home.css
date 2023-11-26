@@ -1,0 +1,66 @@
+/* Gunakan file CSS terpisah atau tambahkan ke file yang sudah ada (misalnya, Home.css) */
+
+/* Style umum */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Container styling */
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .content {
+    max-width: 1200px; /* Set max-width for larger screens */
+    text-align: center;
+  }
+  
+  /* Media query untuk perangkat mobile */
+  @media (max-width: 600px) {
+    .content {
+      margin: 0 40px; /* Ganti margin menjadi 20px untuk perangkat mobile */
+      width: 90%;
+    }
+  }
+  
+  /* Style untuk judul utama */
+  .main-title {
+    color: blue;
+    font-size: 2em;
+    margin-bottom: 16px; /* Spasi bawah untuk paragraf */
+  }
+  
+ /* Style untuk paragraf */
+.content-paragraph {
+    font-size: 1.2em;
+    margin: 0 10px 32px; /* 10px margin kanan dan kiri, 32px margin bawah */
+  }
+  
+  /* Media query untuk perangkat mobile */
+  @media (max-width: 600px) {
+    .content-paragraph {
+      margin: 0 60px 32px; /* Ganti margin menjadi 20px untuk perangkat mobile */
+    }
+  }
+  
+  
+  /* Style untuk button */
+  .main-button {
+    background-color: #4caf50;
+    color: white;
+    padding: 14px 20px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .main-button:hover {
+    background-color: #45a049;
+  }
+  
