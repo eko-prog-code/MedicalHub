@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import TermModal from './TermModal'; // Import TermModal component
+import TermModal from './TermModal';
 import './Produk.css';
 
 const Produk = () => {
@@ -78,7 +78,7 @@ const Produk = () => {
 
       <div className="produk-container">
         {filteredProdukList.map((produk) => (
-          <div key={produk.id} className="produk-card" onClick={() => openModal(produk)}>
+          <div key={produk.id} className="produk-card">
             <p style={{ fontSize: '12px', marginBottom: '8px' }}>Tanggal Terbit Penjualan: {produk.timestamp}</p>
             <h3>{produk.productName}</h3>
             <p>{produk.description}</p>
@@ -94,11 +94,13 @@ const Produk = () => {
             <p>Seller: {produk.sellerName}</p>
             <p>Location: {produk.location}</p>
             <p>WhatsApp: {produk.whatsapp}</p>
+            <button className="term-button" onClick={() => openModal(produk)}>
+              Term & Condition
+            </button>
           </div>
         ))}
       </div>
 
-      {/* Modal */}
       <TermModal isOpen={selectedProduk !== null} closeModal={closeModal} />
     </div>
   );
