@@ -1,0 +1,40 @@
+.produk-container {
+  padding: 16px;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.produk-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 0 16px;
+  min-width: 200px;
+  flex: 0 0 auto;
+}
+
+@media only screen and (max-width: 600px) {
+  .produk-card {
+    margin: 0 8px; 
+    width: calc(100% - 16px);
+  }
+}
+
+/* Search input styling */
+input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  input[type="text"]:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }

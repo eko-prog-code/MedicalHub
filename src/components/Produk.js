@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import './Produk.css';
 
 const Produk = () => {
   const [produkList, setProdukList] = useState([]);
   const [currentTimestamp, setCurrentTimestamp] = useState('');
+  const [searchKeyword, setSearchKeyword] = useState('');
 
   useEffect(() => {
     // Fetch data from Firebase Realtime Database
@@ -46,15 +48,35 @@ const Produk = () => {
     setCurrentTimestamp(formattedCurrentTimestamp);
   };
 
+  const handleSearchChange = (e) => {
+    setSearchKeyword(e.target.value);
+  };
+
+  const filteredProdukList = produkList.filter((produk) =>
+    produk.productName.toLowerCase().includes(searchKeyword.toLowerCase())
+  );
+
   return (
-    <div style={{ width: '100%', overflowX: 'auto' }}>
+    <div>
+      {/* Search form */}
+      <div style={{ textAlign: 'center', marginBottom: '16px', width: '100%' }}>
+        <input
+          type="text"
+          placeholder="Search by Product Name"
+          value={searchKeyword}
+          onChange={handleSearchChange}
+        />
+      </div>
+
       {/* Display current timestamp above the cards */}
       <div style={{ textAlign: 'center', marginBottom: '16px', width: '100%' }}>
         <p>Tanggal dan Waktu Terkini: {currentTimestamp}</p>
       </div>
-      <div style={{ display: 'flex', flexWrap: 'nowrap', padding: '16px' }}>
-        {produkList.map((produk) => (
-          <div key={produk.id} style={{ border: '1px solid #ddd', borderRadius: '8px', padding: '16px', margin: '0 16px', minWidth: '200px' }}>
+
+      {/* Product cards */}
+      <div className="produk-container">
+        {filteredProdukList.map((produk) => (
+          <div key={produk.id} className="produk-card">
             {/* Display the timestamp of the product */}
             <p style={{ fontSize: '12px', marginBottom: '8px' }}>Tanggal Terbit Penjualan: {produk.timestamp}</p>
 
