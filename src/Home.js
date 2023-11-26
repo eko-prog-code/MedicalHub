@@ -1,4 +1,6 @@
+// Home.js
 import React from 'react';
+import FloatingButton from './FloatingButton';
 import MedTradeHub from './components/MedTradeHub';
 import Produk from './components/Produk';
 import Webinar from './components/Webinar';
@@ -23,6 +25,7 @@ const Home = () => {
         <NakesSkillShare />
         <SkillShareCard />
         {/* Add additional content or components as needed */}
+        <FloatingButton />
       </div>
     </div>
   );
