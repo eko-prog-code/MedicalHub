@@ -1,5 +1,4 @@
-// MedTradeHub.js
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { initializeApp } from "firebase/app";
@@ -37,6 +36,7 @@ const MedTradeHub = () => {
   const [image, setImage] = useState("");
   const [location, setLocation] = useState("");
   const [whatsapp, setWhatsapp] = useState("");
+  const [sellerName, setSellerName] = useState(""); // Tambahkan state untuk nama seller
 
   const onDrop = async (acceptedFiles) => {
     try {
@@ -101,6 +101,10 @@ const MedTradeHub = () => {
     setWhatsapp(e.target.value);
   };
 
+  const handleSellerNameChange = (e) => {
+    setSellerName(e.target.value);
+  };
+
   const handleSubmit = async () => {
     try {
       const currentDate = new Date();
@@ -127,6 +131,7 @@ const MedTradeHub = () => {
         image,
         location,
         whatsapp,
+        sellerName, // Tambahkan nama seller ke data yang dikirim
         timestamp: formattedTimestamp,
       });
 
@@ -138,6 +143,7 @@ const MedTradeHub = () => {
         image,
         location,
         whatsapp,
+        sellerName, // Tambahkan nama seller ke data yang dikirim
         timestamp: formattedTimestamp,
       };
 
@@ -161,6 +167,7 @@ const MedTradeHub = () => {
       setImage("");
       setLocation("");
       setWhatsapp("");
+      setSellerName(""); // Reset nama seller
 
       // Close the modal after submission
       closeModal();
@@ -168,6 +175,7 @@ const MedTradeHub = () => {
       console.error("Terjadi kesalahan:", error);
     }
   };
+
 
   return (
     <div className="unique-new-treatment-container">
@@ -228,6 +236,13 @@ const MedTradeHub = () => {
                   />
                 </div>
               )}
+              <h3>Nama Seller</h3>
+              <input
+                type="text"
+                value={sellerName}
+                onChange={handleSellerNameChange}
+                className="unique-input-field"
+              />
               <h3>Lokasi</h3>
               <input
                 type="text"

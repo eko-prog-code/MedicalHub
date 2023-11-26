@@ -91,6 +91,7 @@ const Produk = () => {
                 style={{ width: '100%', height: '150px', objectFit: 'cover', marginBottom: '8px' }}
               />
             )}
+            <p>Seller: {produk.sellerName}</p>
             <p>Location: {produk.location}</p>
             <p>WhatsApp: {produk.whatsapp}</p>
           </div>
