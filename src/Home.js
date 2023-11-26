@@ -2,6 +2,7 @@ import React from 'react';
 import MedTradeHub from './components/MedTradeHub';
 import Produk from './components/Produk';
 import Webinar from './components/Webinar';
+import WebinarCard from './components/WebinarCard';
 import NakesSkillShare from './components/NakesSkillShare';
 import RxDoseCalculator from './components/RxDoseCalculator';
 import './Home.css';
@@ -17,6 +18,7 @@ const Home = () => {
         <MedTradeHub />
         <Produk />
         <Webinar />
+        <WebinarCard />
         <NakesSkillShare />
         {/* Add additional content or components as needed */}
       </div>
