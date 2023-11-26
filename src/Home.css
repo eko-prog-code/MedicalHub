@@ -73,15 +73,18 @@ body {
   background-color: #007bff;
   color: #fff;
   border: none;
-  border-radius: 50%;
+  border-radius: 8px; /* Set your desired border-radius */
   padding: 10px 20px;
   cursor: pointer;
   z-index: 1000;
   text-decoration: none;
-  transition: background-color 0.3s;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow based on your preference */
+  transition: background-color 0.3s, box-shadow 0.3s;
 }
 
 .floating-button:hover {
   background-color: #0056b3;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Add hover effect for shadow */
 }
+
 
