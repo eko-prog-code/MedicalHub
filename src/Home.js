@@ -4,6 +4,7 @@ import Produk from './components/Produk';
 import Webinar from './components/Webinar';
 import WebinarCard from './components/WebinarCard';
 import NakesSkillShare from './components/NakesSkillShare';
+import SkillShareCard from './components/SkillShareCard';
 import RxDoseCalculator from './components/RxDoseCalculator';
 import './Home.css';
 
@@ -20,6 +21,7 @@ const Home = () => {
         <Webinar />
         <WebinarCard />
         <NakesSkillShare />
+        <SkillShareCard />
         {/* Add additional content or components as needed */}
       </div>
     </div>
