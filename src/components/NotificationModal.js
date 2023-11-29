@@ -36,40 +36,30 @@ const NotificationModal = ({ isOpen, onRequestClose, onAllowNotification }) => {
         },
       }}
     >
-      <h2 style={{ textAlign: 'center', color: '#333' }}>Allow Notifications</h2>
-      <p style={{ color: '#555' }}>
-        This website would like to send you notifications. Do you want to allow?
+      <h2 style={{ textAlign: 'center', color: '#333' }}>Izinkan Notifikasi</h2>
+      <p style={{ color: '#333', marginBottom: '20px' }}>
+        Pada perangkat mobile, Anda akan melihat popup di bagian atas layar untuk mengatur notifikasi.
+        <ol>
+          <li>Klik ikon pengaturan</li>
+          <li>Klik izinkan notifikasi untuk situs ini</li>
+        </ol>
+        Dengan mengaktifkan notifikasi, Anda akan mendapatkan informasi terbaru dari Medical Hub. Terima kasih!
       </p>
-      <div style={{ marginTop: '20px', display: 'flex', justifyContent: 'space-between' }}>
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
         <button
           onClick={handleAllowNotification}
           style={{
-            backgroundColor: '#28a745', // Green color for Allow button
-            color: '#fff', // White text color
-            fontSize: '16px', // Larger font size
-            padding: '10px 20px', // Padding for the button
-            borderRadius: '5px', // Rounded corners
-            boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)', // Box shadow
-            cursor: 'pointer', // Change cursor on hover
-            border: 'none', // Remove default border
+            backgroundColor: '#28a745',
+            color: '#fff',
+            fontSize: '16px',
+            padding: '10px 20px',
+            borderRadius: '5px',
+            boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)',
+            cursor: 'pointer',
+            border: 'none',
           }}
         >
-          Allow
-        </button>
-        <button
-          onClick={onRequestClose}
-          style={{
-            backgroundColor: '#dc3545', // Red color for Deny button
-            color: '#fff', // White text color
-            fontSize: '16px', // Larger font size
-            padding: '10px 20px', // Padding for the button
-            borderRadius: '5px', // Rounded corners
-            boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)', // Box shadow
-            cursor: 'pointer', // Change cursor on hover
-            border: 'none', // Remove default border
-          }}
-        >
-          Deny
+          Oke!
         </button>
       </div>
     </Modal>
