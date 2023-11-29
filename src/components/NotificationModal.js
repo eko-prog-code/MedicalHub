@@ -1,16 +1,43 @@
-// NotificationModal.js
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Modal from 'react-modal';
 
 const NotificationModal = ({ isOpen, onRequestClose, onAllowNotification }) => {
+  const [isVisible, setIsVisible] = useState(false);
+
   const handleAllowNotification = () => {
     onAllowNotification();
     onRequestClose();
   };
 
+  useEffect(() => {
+    let initialTimeout;
+    let repeatingInterval;
+
+    // Muncul setelah 10 detik pertama
+    initialTimeout = setTimeout(() => {
+      setIsVisible(true);
+
+      // Muncul setiap 50 detik dan bertahan 10 detik
+      repeatingInterval = setInterval(() => {
+        setIsVisible(true);
+
+        // Menutup modal setelah 10 detik
+        setTimeout(() => {
+          setIsVisible(false);
+        }, 10000);
+      }, 50000);
+    }, 10000);
+
+    // Membersihkan timeout dan interval pada unmount atau ketika modal ditutup
+    return () => {
+      clearTimeout(initialTimeout);
+      clearInterval(repeatingInterval);
+    };
+  }, [isOpen, onRequestClose, setIsVisible, onAllowNotification]);
+
   return (
     <Modal
-      isOpen={isOpen}
+      isOpen={isVisible && isOpen}
       onRequestClose={onRequestClose}
       style={{
         overlay: {
@@ -33,7 +60,7 @@ const NotificationModal = ({ isOpen, onRequestClose, onAllowNotification }) => {
           boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
           maxWidth: '400px',
           width: '100%',
-          height: '510px',
+          height: '480px',
         },
       }}
     >
