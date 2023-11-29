@@ -12,6 +12,7 @@ import WebinarCard from './components/WebinarCard';
 import NakesSkillShare from './components/NakesSkillShare';
 import SkillShareCard from './components/SkillShareCard';
 import RxDoseCalculator from './components/RxDoseCalculator';
+import RME from './components/RME';
 import './Home.css';
 import Notification from './firebaseNotifications/Notification'
 
@@ -24,6 +25,7 @@ const Home = () => {
         <p>#Ciptakan Industri Layanan Kesehatan untuk Tenaga Medis Indonesia</p>
         <p>Medical Hub: konektivitas digital untuk para tenaga medis</p>
         <RxDoseCalculator />
+        <RME />
         <MedTradeHub />
         <Produk />
         <Webinar />
