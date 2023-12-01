@@ -204,7 +204,7 @@ const Webinar = () => {
             </div>
           </Modal>
         ) : (
-          <Button className="p-button-success" onClick={openModal}>
+          <Button style={{ backgroundColor: '#3498db', color: '#ffffff' }} onClick={openModal}>
             Publish Info Webinar
           </Button>
         )}

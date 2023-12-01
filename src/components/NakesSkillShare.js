@@ -189,7 +189,7 @@ const NakesSkillShare = () => {
             </div>
           </Modal>
         ) : (
-          <Button className="p-button-success" onClick={openModal}>
+          <Button style={{ backgroundColor: '#3498db', color: '#ffffff' }} onClick={openModal}>
             Publish Info Nakes Skill Share
           </Button>
         )}
