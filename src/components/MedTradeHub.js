@@ -266,7 +266,7 @@ const MedTradeHub = () => {
             </div>
           </Modal>
         ) : (
-          <Button style={{ backgroundColor: '#4c5fd7', color: '#ffffff' }} onClick={openModal}>
+          <Button style={{ backgroundColor: '#3498db', color: '#ffffff' }} onClick={openModal}>
             Jual Produk
           </Button>
         )}
