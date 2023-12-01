@@ -1,6 +1,8 @@
+// Produk.js
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import TermModal from './TermModal';
+import Modal from 'react-modal'; // Update the import statement
 import './Produk.css';
 
 const Produk = () => {
@@ -8,6 +10,9 @@ const Produk = () => {
   const [currentTimestamp, setCurrentTimestamp] = useState('');
   const [searchKeyword, setSearchKeyword] = useState('');
   const [selectedProduk, setSelectedProduk] = useState(null);
+  const [isImageModalOpen, setImageModalOpen] = useState(false);  // Rename to isModalOpen
+  const [imageUrl, setImageUrl] = useState('');  // Add a state for imageUrl
+  const [productName, setProductName] = useState('');  // Add a state for productName
 
   useEffect(() => {
     const fetchData = async () => {
@@ -57,6 +62,14 @@ const Produk = () => {
     setSelectedProduk(null);
   };
 
+  const openImageModal = () => {
+    setImageModalOpen(true);
+  };
+
+  const closeImageModal = () => {
+    setImageModalOpen(false);
+  };
+
   const filteredProdukList = produkList.filter((produk) =>
     produk.productName.toLowerCase().includes(searchKeyword.toLowerCase())
   );
@@ -88,7 +101,13 @@ const Produk = () => {
               <img
                 src={produk.image}
                 alt={produk.productName}
-                style={{ width: '80%', height: '200px', objectFit: 'cover', marginBottom: '8px' }}
+                style={{ width: '80%', height: '200px', objectFit: 'cover', marginBottom: '8px', cursor: 'pointer' }}
+                onClick={() => {
+                  openImageModal();
+                  setSelectedProduk(produk);
+                  setImageUrl(produk.image);  // Set imageUrl state
+                  setProductName(produk.productName);  // Set productName state
+                }}
               />
             )}
             <p>Seller: {produk.sellerName}</p>
@@ -102,6 +121,37 @@ const Produk = () => {
       </div>
 
       <TermModal isOpen={selectedProduk !== null} closeModal={closeModal} />
+      <Modal
+        isOpen={isImageModalOpen}
+        onRequestClose={closeImageModal}
+        contentLabel="Image Modal"
+        className="modal"
+        overlayClassName="overlay"
+      >
+        <div className="card">
+          <p>Image Modal Content</p>
+          {/* Display the image and product name */}
+          {imageUrl && (
+            <img
+              src={imageUrl}
+              alt={productName}
+              style={{ width: '100%', height: 'auto' }}
+            />
+          )}
+          {/* ... (other content) */}
+          <button
+            onClick={closeImageModal}
+            style={{
+              backgroundColor: 'red',
+              color: 'white',
+              borderRadius: '8px',
+              boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)',
+            }}
+          >
+            Close
+          </button>
+        </div>
+      </Modal>
     </div>
   );
 };

@@ -32,7 +32,7 @@ const FloatingButton = () => {
       target="_blank"
       rel="noopener noreferrer"
     >
-      Komunitas Medical Hub
+      Komunitas
     </a>
   ) : null;
 };
